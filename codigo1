@@ -1,0 +1,15 @@
+sequenceDiagram
+  participant Usuario as Usuario
+  participant Sistema as Sistema
+
+  Usuario->>Sistema: Solicita registrar un nuevo producto
+  Sistema->>Usuario: Solicita información del producto
+  Usuario->>Sistema: Ingresa la información del producto
+  Sistema->>Sistema: Valida la información del producto
+  Sistema->>Usuario: Notifica el éxito o el fracaso del registro
+
+  alt Registro exitoso
+    Sistema->>Usuario: Notifica el éxito del registro
+  else Registro fallido
+    Sistema->>Usuario: Notifica el fracaso del registro
+  end
